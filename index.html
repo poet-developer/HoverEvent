@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HoverEvent</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        @keyframes fadein-ani {
+            from{
+                opacity: 0%;
+            }
+            to{
+                opacity: 100%;
+            }
+        }
+
+        @keyframes fadeout-ani {
+            from{
+                opacity: 100%;
+            }
+            to{
+                opacity: 0%;
+            }
+        }
+
+        .body{
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .index-world{
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: #333;
+            z-index: -100;
+        }
+        .index-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width:100vw;
+            height:100vh;
+        }
+        .index-item{
+            margin: 2rem 0;
+            font-size: 5rem;
+            font-weight: bold;
+            color: snow;
+            height: 5.5rem;
+            z-index: 100;
+        }
+        .index-replace-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top:calc(50% - 3.5rem);
+            /* background: red; */
+            width: 100vw;
+            height: 7rem;
+            left:0;
+            
+        }
+
+        .index-replace-item{
+            color:dodgerblue;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 위로 쌓기 */
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            /* 가운데로 모으기 */
+            /* background: yellow; */
+            width: 100vw;
+            height: 7rem;
+            font-size: 10rem;
+            font-weight: bold;
+
+            opacity: 10%;
+            z-index: -10;
+            /* transition: 5s; */
+
+           
+        }
+
+        .fadein{
+            animation: fadein-ani 2s forwards;
+        }
+
+        .fadeout{
+            animation: fadeout-ani 3s forwards;
+        }
+
+
+    </style>
+</head>
+<body>
+ <div class="index-world"></div>
+    <div class="index-container">
+        <div class="index-item" id="HOME">HOME</div>
+        <div class="index-item" id="ABOUT">ABOUT</div>
+        <div class="index-item" id="PORTFOLIO">PORTFOLIO</div>
+        <div class="index-item" id="CONTACT">CONTACT</div>
+        <div class="index-item" id="SOYOLIM">IRO</div>
+    </div>
+
+    <div class="index-replace-container">
+        <div class="index-replace-item"></div>
+    </div>
+    <script src="pr.js"></script>
+</body>
+</html>

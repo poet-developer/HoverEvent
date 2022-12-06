@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Event -Example</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .body{
+            background-color: #222;
+        }
+        section{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* background: #222; */
+            width: 100vw;
+            height: 100vh;
+        }
+        ul{
+            list-style: none;
+        }
+
+        ul li {
+            text-align: center;
+            
+        }
+
+        ul li a{
+            display: block;
+            /* position: relative; */
+            /* background: dodgerblue; */
+            /* background-color: yellow; */
+            text-decoration: none;
+            color: snow;
+            font-size: 5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            /* z-index: 1; */
+        }
+
+        ul li a::after{
+            content: attr(data-text);
+            position: absolute;
+            left:0;
+            top:0;
+            text-align: center;
+            width:100%;
+            height:100%;
+            color: dodgerblue;
+            font-size: 7rem;
+            
+            transition: 1s;
+            line-height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        ul li:hover a::after {
+            opacity: 1;
+            /* z-index: -1; */
+        }
+    </style>
+</head>
+<body class="body">
+    <section>
+        <ul>
+            <li><a href="#" data-text='Home'>Home</a></li>
+            <li><a href="#" data-text='About'>About</a></li>
+            <li><a href="#" data-text='Portfolio'>Portfolid</a></li>
+            <li><a href="#" data-text='Contact'>Contact</a></li>
+            <li><a href="#" data-text='Soyolim'>IRO</a></li>
+        </ul>
+    </section>
+</body>
+</html>
